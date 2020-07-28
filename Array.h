@@ -5,8 +5,8 @@ template <class T, class Allocator = std::allocator<T>>
 class Array
 {
 public:
-	//   конструктор класса
-	//	 методы с параметрами по умолчанию не могут быть определены вне класса
+	//   ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ«Г Г±Г±Г 
+	//	 Г¬ГҐГІГ®Г¤Г» Г± ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ Г­ГҐ Г¬Г®ГЈГіГІ ГЎГ»ГІГј Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­Г» ГўГ­ГҐ ГЄГ«Г Г±Г±Г 
 	explicit Array(size_t size, const T& value = T())
 		: size_(size) {
 		//std::cout << this << " constructor\n"; 
@@ -18,27 +18,27 @@ public:
 			new (data_ + i) T(value);
 	};
 
-	//   конструктор по умолчанию
+	//   ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ
 	Array();
 
-	//   деструктор
+	//   Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 	~Array();
 
-	//   конструктор копирования
+	//   ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
 	Array(const Array & other);
 	Array(const std::vector<T> & other);
 
-	//	 оператор присваивания
+	//	 Г®ГЇГҐГ°Г ГІГ®Г° ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї
 	Array& operator=(const Array & other);
 
-	//	 перемещающий конструктор
+	//	 ГЇГҐГ°ГҐГ¬ГҐГ№Г ГѕГ№ГЁГ© ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
 	Array(Array && s) {
 		swap(s);
 		s.data_ = nullptr; 
 		s.size_ = 0;
 	}
 
-	//	 перемещающий оператор присваивания
+	//	 ГЇГҐГ°ГҐГ¬ГҐГ№Г ГѕГ№ГЁГ© Г®ГЇГҐГ°Г ГІГ®Г° ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГї
 	Array & operator=(Array && s) {
 		
 		swap(s);
@@ -47,11 +47,11 @@ public:
 	}
 
 	void swap(Array &other);
-	//   возвращает размер массива (количество элементов).
+	//   ГўГ®Г§ГўГ°Г Г№Г ГҐГІ Г°Г Г§Г¬ГҐГ° Г¬Г Г±Г±ГЁГўГ  (ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў).
 	size_t size() const;
 	//T * data() const { return data_; };
 
-	//   две версии оператора доступа по индексу
+	//   Г¤ГўГҐ ГўГҐГ°Г±ГЁГЁ Г®ГЇГҐГ°Г ГІГ®Г°Г  Г¤Г®Г±ГІГіГЇГ  ГЇГ® ГЁГ­Г¤ГҐГЄГ±Гі
 	T& operator[](size_t i);
 	const T& operator[](size_t i) const;
 
@@ -69,28 +69,6 @@ private:
 	T * data_;
 };
 
-
-//---------------------Sonya--------------------------
-/*
-template <class T>
-class Sonya {
-public:
-	Sonya(T v);
-	Sonya() :vafelka(0) {};
-	T & operator [](size_t i);
-	~Sonya();
-private:
-	T vafelka;
-};
-
-template <class T>
-Sonya<T>::Sonya(T v) : vafelka (v) {}
-
-template <class T> 
-T & Sonya<T>::operator [](size_t i){return i;}
-
-template <class T> Sonya<T>::~Sonya() {}
-*/
 
 #include "Array_impl.h"
 
