@@ -1,2 +1,0 @@
-﻿  Source.cpp
-d:\projects\stepik\stepik\source.cpp(1506): error C3867: "VectorList<int>::const_iterator::operator ++": нестандартный синтаксис; используйте "&", чтобы создать указатель на член
